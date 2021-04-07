@@ -1,0 +1,11 @@
+HTML:
+- element voor kaarten speler
+- element voor kaarten dealer
+- scorebord 
+- knop met tekst 'Delen'
+- knop met tekst 'Pas'
+
+JavaScript:
+- Cards object -> bevat alle kaarten in het spel + scores per kaart
+- Player object
+- Dealer object 
