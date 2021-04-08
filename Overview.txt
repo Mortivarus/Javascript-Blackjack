@@ -2,10 +2,27 @@ HTML:
 - element voor kaarten speler
 - element voor kaarten dealer
 - scorebord 
-- knop met tekst 'Delen'
+- knop met tekst 'Delen' -> verandert in 'hit' na het delen
 - knop met tekst 'Pas'
 
 JavaScript:
 - Cards object -> bevat alle kaarten in het spel + scores per kaart
-- Player object
-- Dealer object 
+- Player object -> bevat score + hand
+- Dealer object  -> bevat score + hand (in begin slechts 1 kaart tot eigen beurt)
+
+
+Dealer deelt kaarten, 2 voor de speler, 2 voor zichzelf, van eigen kaarten is slechts 1 zichtbaar, elke kaart kan maar 1 keer per spel gedeelt worden
+
+- Punten = 21 (aas + boer/vrouw/heer) -> blackjack, spel gewonnen
+- Punten < 21 -> spel kan doorgaan met 'hit' (random kaart toevoegen)
+- Punten > 21 -> spel verloren
+
+Bij 'pas' -> beurt bank:
+- Opent tweede kaart
+- Punten < 17, nieuwe kaart erbij
+- Punten bank = 16 & punten speler = 16 -> dealer stopt
+- Punten >= 17 -> stop met nieuwe kaarten erbij
+- Punten > 21 -> bank is dood -> gewonnen
+- Bank is niet dood -> punten speler > punten bank 
+
+

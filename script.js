@@ -44,3 +44,38 @@ const Cards = {
     spade_king: 10, 
     spade_queen: 10
 }
+
+
+const Player = {
+    deck:[],
+    checkCard(){
+        score = 0
+        for(i = 0; i< this.deck.length; i++){
+            score += Cards[this.deck[i]]
+            }
+        return score
+        },
+}
+
+let deck = Object.keys(Cards)
+
+const deal = (player) => {
+    
+    let draw1 =""
+    let draw2 =""
+
+    while (draw1 === draw2) {
+        draw1 = deck[Math.floor((Math.random()*deck.length))]
+        draw2 = deck[Math.floor((Math.random()*deck.length))]
+    }
+
+    let forRemove = [draw1, draw2]
+
+    deck = deck.filter(item => !forRemove.includes(item))
+
+    player.deck.push(draw1, draw2)
+}
+
+deal(Player)
+
+console.log(Player.deck, Player.checkCard())
