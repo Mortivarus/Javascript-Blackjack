@@ -45,37 +45,127 @@ const Cards = {
     spade_queen: 10
 }
 
+// const Player = class {
+//     constructor(){
+//         this.deck = []
+//         this.aces = ["club_1", "diamond_1", "heart_1", "spade_1"]
+//     }
 
-const Player = {
-    deck:[],
-    checkCard(){
-        score = 0
-        for(i = 0; i< this.deck.length; i++){
-            score += Cards[this.deck[i]]
-            }
-        return score
-        },
-}
+//     checkAces(){
 
-let deck = Object.keys(Cards)
+//         let test = this.aces.some(el => this.deck.includes(el))
 
-const deal = (player) => {
+//         return test
+//     }
+
+//     checkCard(array){
+//         let score = 0
     
-    let draw1 =""
-    let draw2 =""
+//         for(let i = 0; i< array.length; i++){
+//             score += Cards[array[i]]
+//             }
+//         return score
+//     }
 
-    while (draw1 === draw2) {
-        draw1 = deck[Math.floor((Math.random()*deck.length))]
-        draw2 = deck[Math.floor((Math.random()*deck.length))]
-    }
+//     deckScore(){
+//         if(this.checkAces === true){
+//             let filteredDeck = this.deck.filter(item => !this.aces.includes(item))
+//             let score1 = this.checkCard(filteredDeck) + 1
+//             let score2 = this.checkCard(filteredDeck) + 11
 
-    let forRemove = [draw1, draw2]
+//             if(score1 > 21 || score2 > 21){
+//                 return Math.min(score1, score2)
+//             } else{
+//                 return Math.max(score1, score2)
+//             }
 
-    deck = deck.filter(item => !forRemove.includes(item))
+//         } else{
+//             return this.checkCard(this.deck)
+//         }
+//     }
+// }
 
-    player.deck.push(draw1, draw2)
+// let deck = Object.keys(Cards)
+
+// let player1 = new Player()
+
+// let dealer = new Player()
+
+//         console.log(filteredDeck)
+//         console.log(checkCard(filteredDeck))
+//         let score1 = checkCard(filteredDeck) + 1
+//         let score2 = checkCard(filteredDeck) + 11
+//         console.log(score1)
+//         console.log(score2)
+
+//         if(score1 > 21 || score2 > 21){
+//             return Math.min(score1, score2)
+//         } else{
+//             return Math.max(score1, score2)
+//         }
+
+//     } else{
+//         return checkCard(deck)
+//     }
+// }
+
+// const deal = (player) => {
+    
+//     let draw1 =""
+//     let draw2 =""
+
+//     while (draw1 === draw2) {
+//         draw1 = deck[Math.floor((Math.random()*deck.length))]
+//         draw2 = deck[Math.floor((Math.random()*deck.length))]
+//     }
+
+//     let forRemove = [draw1, draw2]
+
+//     deck = deck.filter(item => !forRemove.includes(item))
+
+//     player.deck.push(draw1, draw2)
+// }
+
+// deal(player1)
+
+// console.log(player1.deck, player1.deckScore())
+
+
+let deck = []
+const aces = ["club_1", "diamond_1", "heart_1", "spade_1"]
+
+
+let checkAces = () =>{
+
+    let test = aces.some(el => deck.includes(el))
+
+    return test
 }
 
-deal(Player)
+let checkCard = (array) =>{
+    let score = 0
 
-console.log(Player.deck, Player.checkCard())
+    for(let i = 0; i< array.length; i++){
+        score += Cards[array[i]]
+        }
+    return score
+}
+
+let deckScore = () =>{
+    if(checkAces() === true){
+        let filteredDeck = deck.filter(item => !aces.includes(item))
+        let acesDeck = deck.filter(item => aces.includes(item))
+        let scoreArray = []
+
+        for(let i = 0; i < acesDeck.length + 1; i++){
+            scoreArray.push(
+                checkCard(filteredDeck) + i * 11 + (acesDeck.length - i) * 1
+            )
+        }
+        return scoreArray
+    }
+}
+
+deck = ["club_1", "diamond_king", "diamond_1"]
+
+console.log(deckScore())

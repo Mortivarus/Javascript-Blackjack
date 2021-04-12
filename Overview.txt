@@ -16,6 +16,8 @@ Dealer deelt kaarten, 2 voor de speler, 2 voor zichzelf, van eigen kaarten is sl
 - Punten = 21 (aas + boer/vrouw/heer) -> blackjack, spel gewonnen
 - Punten < 21 -> spel kan doorgaan met 'hit' (random kaart toevoegen)
 - Punten > 21 -> spel verloren
+- Totaal < 21 && speler heeft aas -> aas telt als 11
+- Totaal > 21 && speler heeft aas -> aas telt als 1
 
 Bij 'pas' -> beurt bank:
 - Opent tweede kaart
@@ -24,5 +26,18 @@ Bij 'pas' -> beurt bank:
 - Punten >= 17 -> stop met nieuwe kaarten erbij
 - Punten > 21 -> bank is dood -> gewonnen
 - Bank is niet dood -> punten speler > punten bank 
+
+
+
+[3, 5, [11,1], [11,1], [11, 1], [11, 1]]
+
+8 + 11 + 11 + 11 + 11
+
+8 + 0 -> i * 1 + 0 -> i *11
+
+
+count aces.length 
+
+8 + i * 11 + length - i * 1
 
 
