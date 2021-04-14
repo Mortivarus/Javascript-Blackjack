@@ -1,3 +1,4 @@
+//Object with all cards and card values
 const Cards = {
 	club_1: [1, 11],
     club_2: 2,
@@ -45,127 +46,116 @@ const Cards = {
     spade_queen: 10
 }
 
-// const Player = class {
-//     constructor(){
-//         this.deck = []
-//         this.aces = ["club_1", "diamond_1", "heart_1", "spade_1"]
-//     }
+//Create a player class with a deck and pre-selected player type, as well as a predefined array for aces
+const Player = class {
+    constructor(playerType){
+        this.deck = []
+        this.aces = ["club_1", "diamond_1", "heart_1", "spade_1"]
+        this.playerType = playerType
+    }
 
-//     checkAces(){
+    //Check if the deck has aces
+    checkAces(){ 
+        let test = this.aces.some(el => this.deck.includes(el))
+        return test
+    }
 
-//         let test = this.aces.some(el => this.deck.includes(el))
-
-//         return test
-//     }
-
-//     checkCard(array){
-//         let score = 0
+    //Loop over an array and calculate the score 
+    checkCard(array){
+        let score = 0
     
-//         for(let i = 0; i< array.length; i++){
-//             score += Cards[array[i]]
-//             }
-//         return score
-//     }
+        for(let i = 0; i< array.length; i++){
+            score += Cards[array[i]]
+            }
+        return score
+    }
 
-//     deckScore(){
-//         if(this.checkAces === true){
-//             let filteredDeck = this.deck.filter(item => !this.aces.includes(item))
-//             let score1 = this.checkCard(filteredDeck) + 1
-//             let score2 = this.checkCard(filteredDeck) + 11
+    //If an array has aces, calculate all the possible scores. If player type is a player, return the highest value under 21, otherwise return the highest value 
+    deckScore(){ 
+        if(this.checkAces() === true){
+            let filteredDeck = this.deck.filter(item => !this.aces.includes(item))
+            let acesDeck = this.deck.filter(item => this.aces.includes(item))
+            let scoreArray = []
+            
+            for(let i = 0; i < acesDeck.length + 1; i++){
+                scoreArray.push(
+                    this.checkCard(filteredDeck) + i * 11 + (acesDeck.length - i) * 1
+                )
+            }
 
-//             if(score1 > 21 || score2 > 21){
-//                 return Math.min(score1, score2)
-//             } else{
-//                 return Math.max(score1, score2)
-//             }
-
-//         } else{
-//             return this.checkCard(this.deck)
-//         }
-//     }
-// }
-
-// let deck = Object.keys(Cards)
-
-// let player1 = new Player()
-
-// let dealer = new Player()
-
-//         console.log(filteredDeck)
-//         console.log(checkCard(filteredDeck))
-//         let score1 = checkCard(filteredDeck) + 1
-//         let score2 = checkCard(filteredDeck) + 11
-//         console.log(score1)
-//         console.log(score2)
-
-//         if(score1 > 21 || score2 > 21){
-//             return Math.min(score1, score2)
-//         } else{
-//             return Math.max(score1, score2)
-//         }
-
-//     } else{
-//         return checkCard(deck)
-//     }
-// }
-
-// const deal = (player) => {
-    
-//     let draw1 =""
-//     let draw2 =""
-
-//     while (draw1 === draw2) {
-//         draw1 = deck[Math.floor((Math.random()*deck.length))]
-//         draw2 = deck[Math.floor((Math.random()*deck.length))]
-//     }
-
-//     let forRemove = [draw1, draw2]
-
-//     deck = deck.filter(item => !forRemove.includes(item))
-
-//     player.deck.push(draw1, draw2)
-// }
-
-// deal(player1)
-
-// console.log(player1.deck, player1.deckScore())
-
-
-let deck = []
-const aces = ["club_1", "diamond_1", "heart_1", "spade_1"]
-
-
-let checkAces = () =>{
-
-    let test = aces.some(el => deck.includes(el))
-
-    return test
-}
-
-let checkCard = (array) =>{
-    let score = 0
-
-    for(let i = 0; i< array.length; i++){
-        score += Cards[array[i]]
+            if(this.playerType === "player"){
+                return Math.max(...scoreArray.filter(item => item < 22))
+            } else if(this.playerType === "dealer"){
+                return Math.max(...scoreArray)
+            }
+            
+        } else{
+            return this.checkCard(this.deck)
         }
-    return score
-}
-
-let deckScore = () =>{
-    if(checkAces() === true){
-        let filteredDeck = deck.filter(item => !aces.includes(item))
-        let acesDeck = deck.filter(item => aces.includes(item))
-        let scoreArray = []
-
-        for(let i = 0; i < acesDeck.length + 1; i++){
-            scoreArray.push(
-                checkCard(filteredDeck) + i * 11 + (acesDeck.length - i) * 1
-            )
-        }
-        return scoreArray
     }
 }
 
-deck = ["club_1", "diamond_king", "diamond_1"]
+let deck = Object.keys(Cards)
 
-console.log(deckScore())
+let player1 = new Player("dealer")
+
+let dealer = new Player()
+
+let status = ""
+
+
+//Draw two cards from the deck and add them to the player deck
+const deal = (player) => {
+    let draw1 =""
+    let draw2 =""
+
+    while (draw1 === draw2) {
+        draw1 = deck[Math.floor((Math.random()*deck.length))]
+        draw2 = deck[Math.floor((Math.random()*deck.length))]
+    }
+
+    let forRemove = [draw1, draw2]
+    deck = deck.filter(item => !forRemove.includes(item))
+    player.deck.push(draw1, draw2)
+}
+
+//Draw a card from the deck. If the player type is a player, and the total score is 
+const hit = (player) => {
+    let draw = deck[Math.floor((Math.random()*deck.length))]
+    deck = deck.filter(item => item != draw)
+    player.deck.push(draw)
+
+    if(player.playerType === "player" && player.deckScore > 21){
+        status = "lose"
+    }
+}
+
+const checkConditions = (player, dealer) => {
+    if(dealer.deckScore < 16){
+        return
+    }
+
+    if(player.deckScore() > 21){
+        return status = "lose"
+    } else if(dealer.deckScore() > 21 || player.deckScore() === 21){
+        return status = "won"
+    }
+
+
+    
+}
+
+
+const pass = () => {
+
+    while(dealer.deckScore() < 17){
+        hit(dealer)
+    }
+    
+    
+    
+    
+    
+}
+
+

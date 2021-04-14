@@ -1,0 +1,57 @@
+{
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "M.F.Weemeijer"
+      },
+      "creation_time": "2021-04-14T08:24:59.700Z",
+      "details": {
+        "content": "- Maak een div voor de speler en de dealer\n- Maak een functie die de kaart images op het scherm toont\n- Voordat de speler op 'pas' heeft geklikt, moet slechts een kaart van de dealer worden getoond",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "Maak een GUI voor de kaarten van de dealer en de speler"
+    }
+  ],
+  "in-progress": [
+    {
+      "assignedTo": {
+        "name": "M.F.Weemeijer"
+      },
+      "creation_time": "2021-04-14T09:39:59.862Z",
+      "description": {
+        "content": "- Check wat de score van de speler en de dealer is\n- Als de score van de dealer en speler 16 is, stopt de functie, bereken de eindstand\n- Als de score van de dealer hoger is dan 17 stopt de functie, bereken de eindstand\n- Als de score van de dealer lager is dan 16 of 17, pak een nieuwe kaart tot die stand is bereikt -> while loop",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "references": [],
+      "title": "Maak een pass functie"
+    }
+  ],
+  "testing": [],
+  "done": [
+    {
+      "assignedTo": {
+        "name": "M.F.Weemeijer"
+      },
+      "creation_time": "2021-04-14T08:24:33.187Z",
+      "id": "1",
+      "references": [],
+      "title": "Check hoeveel azen er in het deck zitten, neem de laagste score onder de 21"
+    },
+    {
+      "assignedTo": {
+        "name": "M.F.Weemeijer"
+      },
+      "creation_time": "2021-04-14T08:29:08.786Z",
+      "description": {
+        "content": "- Voeg nieuwe kaart toe aan speler, verwijder kaart uit deck\n- Bereken score, bij score boven de 21 is de speler 'af' \n- Vergelijkbaar met 'deal' functie, maar dan met 1 kaart",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "references": [],
+      "title": "Hit functie maken"
+    }
+  ]
+}

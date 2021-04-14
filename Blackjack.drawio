@@ -4,99 +4,192 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Player" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="2" value="Player" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="280" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Dealer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="3" value="Dealer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="440" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="'Deel'&amp;nbsp; functie" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="8" value="'Deel'&amp;nbsp; functie" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="620" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="'Hit' functie" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="9" value="'Hit' functie" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="800" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Randomiser, deel 2 kaarten aan iedere speler&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="10" value="Randomiser, deel 2 kaarten aan iedere speler&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="620" y="320" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Randomiser, deel nieuwe kaart uit" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="12" value="Randomiser, deel nieuwe kaart uit" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="800" y="320" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9" target="12">
+                <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="9" target="12" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="400" y="610" as="sourcePoint"/>
                         <mxPoint x="450" y="560" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="14" value="Puntentelling" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="14" value="Puntentelling" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="280" y="300" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="Deck" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="15" value="Deck" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="280" y="360" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="Puntentelling" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="16" value="Puntentelling" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="440" y="300" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="Deck" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="17" value="Deck" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="440" y="360" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="Cards (bevat alle kaarten en punten)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="18" value="Cards (bevat alle kaarten en punten)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="80" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="Generieke player object?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="19" value="Generieke player object?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="360" y="110" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="19" target="2">
+                <mxCell id="20" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="19" target="2" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="400" y="300" as="sourcePoint"/>
                         <mxPoint x="450" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="19" target="3">
+                <mxCell id="21" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="19" target="3" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="400" y="300" as="sourcePoint"/>
                         <mxPoint x="450" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="22" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="10">
+                <mxCell id="22" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="8" target="10" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="590" y="390" as="sourcePoint"/>
                         <mxPoint x="640" y="340" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="Verander na delen in 'hit' knop" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="23" value="Verander na delen in 'hit' knop" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="620" y="420" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="Converteer deck naar punten" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="25" value="Converteer deck naar punten" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="280" y="420" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="Converteer deck naar punten" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="27" value="Converteer deck naar punten" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="440" y="420" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-29" value="Puntentelling speler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-29" value="Puntentelling speler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="980" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-30" value="Deck bevat een aas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-30" value="Deck bevat een aas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="980" y="320" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-31" value="Puntentelling onder de 21: tel mee als 11, puntentelling boven de 21: tel mee als 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-31" value="Puntentelling onder de 21: tel mee als 11, puntentelling boven de 21: tel mee als 1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="980" y="410" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-32" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="10" target="23">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-32" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="10" target="23" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="820" y="460" as="sourcePoint"/>
                         <mxPoint x="870" y="410" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-33" value="Puntentelling dealer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-33" value="Puntentelling dealer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1160" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-34" value="Deck bevat een aas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-34" value="Deck bevat een aas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1160" y="320" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="r5HApRjiI2PeuLi_GRQq-35" value="Puntentelling onder de 16/17: tel mee als 1, puntentelling boven de 16/17: tel mee als 11" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="r5HApRjiI2PeuLi_GRQq-35" value="Puntentelling onder de 16/17: tel mee als 1, puntentelling boven de 16/17: tel mee als 11" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1160" y="410" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="gVt5eT87VEJF1vWV__ui" name="Page-2">
+        <mxGraphModel dx="532" dy="376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-0"/>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-1" parent="WIlA7EV0zivZg6qmHBKR-0"/>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-2" value="Player score&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="240" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-3" value="Player Lost" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="400" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-4" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-2" target="WIlA7EV0zivZg6qmHBKR-3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="400" as="sourcePoint"/>
+                        <mxPoint x="470" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-5" value="&amp;gt;21" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-6" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-2" target="WIlA7EV0zivZg6qmHBKR-8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="200" as="sourcePoint"/>
+                        <mxPoint x="370" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-7" value="=21" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-8" value="Player Won" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="80" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-9" value="Dealer score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="240" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-2" target="WIlA7EV0zivZg6qmHBKR-9">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="240" as="sourcePoint"/>
+                        <mxPoint x="390" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-11" value="&amp;lt;21" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-12" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-9" target="WIlA7EV0zivZg6qmHBKR-8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="270" as="sourcePoint"/>
+                        <mxPoint x="350" y="270" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="140" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-13" value="&amp;gt;21" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="15.24" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-14" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-9">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="290" y="270" as="sourcePoint"/>
+                        <mxPoint x="300" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-15" value="&amp;lt;21" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-21" target="WIlA7EV0zivZg6qmHBKR-9">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="300" y="360"/>
+                            <mxPoint x="300" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-21" value="Player score &amp;amp;&amp;amp; Dealer score = 16?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="240" y="360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-23" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIlA7EV0zivZg6qmHBKR-1" source="WIlA7EV0zivZg6qmHBKR-21" target="WIlA7EV0zivZg6qmHBKR-25">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="350" as="sourcePoint"/>
+                        <mxPoint x="300" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-24" value="Label" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="WIlA7EV0zivZg6qmHBKR-25" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIlA7EV0zivZg6qmHBKR-1">
+                    <mxGeometry x="240" y="490" width="120" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
