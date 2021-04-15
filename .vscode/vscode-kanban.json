@@ -1,5 +1,6 @@
 {
-  "todo": [
+  "todo": [],
+  "in-progress": [
     {
       "assignedTo": {
         "name": "M.F.Weemeijer"
@@ -12,21 +13,15 @@
       "id": "2",
       "references": [],
       "title": "Maak een GUI voor de kaarten van de dealer en de speler"
-    }
-  ],
-  "in-progress": [
+    },
     {
       "assignedTo": {
         "name": "M.F.Weemeijer"
       },
-      "creation_time": "2021-04-14T09:39:59.862Z",
-      "description": {
-        "content": "- Check wat de score van de speler en de dealer is\n- Als de score van de dealer en speler 16 is, stopt de functie, bereken de eindstand\n- Als de score van de dealer hoger is dan 17 stopt de functie, bereken de eindstand\n- Als de score van de dealer lager is dan 16 of 17, pak een nieuwe kaart tot die stand is bereikt -> while loop",
-        "mime": "text/markdown"
-      },
-      "id": "4",
+      "creation_time": "2021-04-15T11:00:39.494Z",
+      "id": "5",
       "references": [],
-      "title": "Maak een pass functie"
+      "title": "GUI en game logic aan elkaar knopen"
     }
   ],
   "testing": [],
@@ -52,6 +47,19 @@
       "id": "3",
       "references": [],
       "title": "Hit functie maken"
+    },
+    {
+      "assignedTo": {
+        "name": "M.F.Weemeijer"
+      },
+      "creation_time": "2021-04-14T09:39:59.862Z",
+      "description": {
+        "content": "- Check wat de score van de speler en de dealer is\n- Als de score van de dealer en speler 16 is, stopt de functie, bereken de eindstand\n- Als de score van de dealer hoger is dan 17 stopt de functie, bereken de eindstand\n- Als de score van de dealer lager is dan 16 of 17, pak een nieuwe kaart tot die stand is bereikt -> while loop",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "references": [],
+      "title": "Maak een pass functie"
     }
   ]
 }
