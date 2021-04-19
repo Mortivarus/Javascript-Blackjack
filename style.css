@@ -3,8 +3,18 @@
     justify-content: center;
     padding-top: 30px;
     padding-bottom: 30px;
+    background-color:  #229954;
   }
   
   .column {
     padding: 10px;
+  }
+
+  .deck{
+    height: 240px;
+  }
+
+  .score{
+    color: #e74c3c;
+    background-color: #2ecc71;
   }

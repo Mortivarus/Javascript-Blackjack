@@ -1,6 +1,6 @@
 //Object with all cards and card values
 const Cards = {
-	club_1: [1, 11],
+	club_1: 0,
     club_2: 2,
     club_3: 3, 
     club_4: 4,
@@ -11,7 +11,7 @@ const Cards = {
     club_jack: 10,
     club_king: 10, 
     club_queen: 10, 
-	diamond_1: [1, 11],
+	diamond_1: 0,
     diamond_2: 2,
     diamond_3: 3, 
     diamond_4: 4,
@@ -33,7 +33,7 @@ const Cards = {
     heart_jack: 10,
     heart_king: 10, 
     heart_queen: 10, 
-	spade_1: [1, 11],
+	spade_1: 0,
     spade_2: 2,
     spade_3: 3, 
     spade_4: 4,
@@ -48,14 +48,18 @@ const Cards = {
 
 const addCardtoHTML = (card, player) =>{
     let img = document.createElement("img")
-    img.className = "column" 
+    img.className = "column"
+    img.id = card
     img.src = `cards/${card}.png`
     let src = document.getElementById(`${player.playerType}Deck`)
     src.appendChild(img)
 }
 
-
-
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 //Create a player class with a deck and pre-selected player type, as well as a predefined array for aces
 const Player = class {
@@ -117,9 +121,18 @@ var status = ""
 
 //Update the shown deck and score
 const updateDeckAndScore = (player) =>{
-    document.getElementById(`${player.playerType}Deck`).innerHTML = player.deck
-    document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
 
+    if(player.playerType === "dealer"){
+        removeAllChildNodes(dealerDeck)
+    } else if(player.playerType === "player"){
+        removeAllChildNodes(playerDeck)
+    }
+
+    player.deck.forEach(element => {
+        addCardtoHTML(element, player)
+    });
+    
+    document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
 }
 
 //Draw two cards from the deck and add them to the player deck
@@ -137,9 +150,12 @@ const deal = (player) => {
     player.deck.push(draw1, draw2)
     
     if(player.playerType === "player"){
-        updateDeckAndScore(player)
+        player.deck.forEach((element) => {addCardtoHTML(element, player)})
+        document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
     } else if(player.playerType === "dealer"){
-        document.getElementById("dealerDeck").innerHTML = player.deck[0]
+        addCardtoHTML(player.deck[0], player)
+        addCardtoHTML("back", player)
+        document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
     }
     
     return console.log(`Cards have been dealt to ${player.name}`)
@@ -180,15 +196,3 @@ const pass = () => {
     updateDeckAndScore(dealer)
     checkConditions(player1, dealer) 
 }
-
-addCardtoHTML("spade_7", player1)
-
-addCardtoHTML("spade_7", player1)
-
-// addCardtoHTML("spade_7", playerCard3)
-
-// addCardtoHTML("spade_7", "playerCard4")
-
-addCardtoHTML("spade_8", dealer)
-
-addCardtoHTML("spade_7", dealer)
