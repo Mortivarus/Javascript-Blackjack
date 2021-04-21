@@ -46,6 +46,14 @@ const Cards = {
     spade_queen: 10
 }
 
+
+const dealHitBtn = document.getElementById("dealHit")
+
+const passBtn = document.getElementById("pass")
+
+const banner = document.getElementById("banner")
+
+
 const addCardtoHTML = (card, player) =>{
     let img = document.createElement("img")
     img.className = "column"
@@ -100,7 +108,11 @@ const Player = class {
             }
 
             if(this.playerType === "player"){
-                return Math.max(...scoreArray.filter(item => item < 22))
+                if(scoreArray.filter(item => item < 22).length > 0){
+                    return Math.max(...scoreArray.filter(item => item < 22))
+                } else {
+                    return Math.min(...scoreArray)
+                }
             } else if(this.playerType === "dealer"){
                 return Math.max(...scoreArray)
             }
@@ -133,6 +145,11 @@ const updateDeckAndScore = (player) =>{
     });
     
     document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
+
+    if(status === "win" || status === "loss"){
+        banner.innerHTML = `Game over, it's a ${status}!`
+    }
+
 }
 
 //Draw two cards from the deck and add them to the player deck
@@ -155,44 +172,66 @@ const deal = (player) => {
     } else if(player.playerType === "dealer"){
         addCardtoHTML(player.deck[0], player)
         addCardtoHTML("back", player)
-        document.getElementById(`${player.playerType}Score`).innerHTML = player.deckScore()
     }
-    
-    return console.log(`Cards have been dealt to ${player.name}`)
-
 }
 
 //Check the win/lose conditions
 const checkConditions = (player, dealer) => {
     if(player.deckScore() > 21){ //If the player's score is more than 21, they lose
-        return status = "lose"
+        status = "loss"
+        return
     } else if(dealer.deckScore() < 16){ //If the player is not out and the dealer still needs to hit, end function
         return
     } else if(dealer.deckScore() > 21 || player.deckScore() === 21){ //If the dealer has more than 21 points or the player has 21 points, the player wins
-        return status = "won"
+        status = "win"
+        return
     } else if(player.deckScore() > dealer.deckScore()){ //If the player has a higher score than the dealer, they win
-        return status = "won"
+        status = "win"
+        return
     } else{ //If the player has a lower score than the dealer, they lose (remainder category)
-        return status = "lose"
+        status = "loss"
+        return
     }
 }
 
-//Draw a card from the deck. If the player type is a player, and the total score is more than 21, return the 'lose' status
+//Draw a card from the deck. If the player type is a dealer, check the win/lose conditions
 const hit = (player) => {
     let draw = deck[Math.floor((Math.random()*deck.length))]
     deck = deck.filter(item => item != draw)
     player.deck.push(draw)
-
-    checkConditions(player, dealer)
     updateDeckAndScore(player)
+
+    if(player.playerType === "dealer"){
+        checkConditions(player, dealer)
+    } else {
+        return
+    }
 }
 
 //Player passes, dealer gets a card until he has 17 or more points
 const pass = () => {
     while(dealer.deckScore() < 17){
         hit(dealer)
-        checkConditions(player1, dealer)
     }
+    checkConditions(player1, dealer)
     updateDeckAndScore(dealer)
-    checkConditions(player1, dealer) 
+
 }
+
+const dealHitTrigger = () => {
+    if(dealHit.innerHTML === "Deal"){
+        deal(dealer)
+        deal(player1)
+        dealHit.innerHTML = "Hit"
+    } else if(dealHit.innerHTML === "Hit") {
+        if(player1.deckScore() > 22 || status === "loss" || status === "win"){
+            return
+        } else {
+            hit(player1)
+        }
+    }
+}
+
+dealHitBtn.addEventListener("click", dealHitTrigger)
+
+passBtn.addEventListener("click", pass)
